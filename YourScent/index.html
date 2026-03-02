@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Your Scent – Discover luxurious floral, fresh citrus and aquatic perfumes crafted for those who love nature's finest aromas." />
+  <title>Your Scent | Luxury Perfumes</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="home.css" />
+</head>
+<body>
+
+  <!-- ══ NAVBAR ══ -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon">🌸</div>
+      <span class="brand-name">Your Scent</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="nav-btn-icon" id="searchBtn" title="Search">🔍</button>
+      <button class="nav-btn-icon cart-btn" id="cartBtn" title="Cart">
+        🛒<span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- ══ HERO ══ -->
+  <section class="hero" id="home">
+    <div class="hero-bg-shapes">
+      <div class="hero-blob hero-blob-1"></div>
+      <div class="hero-blob hero-blob-2"></div>
+      <div class="hero-blob hero-blob-3"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-text animate-in">
+        <div class="hero-tag">✨ New Spring Collection 2026</div>
+        <h1 class="hero-title">
+          Wear the<br />
+          <span class="text-gradient">Scent of Nature</span>
+        </h1>
+        <p class="hero-sub">
+          Handcrafted perfumes inspired by blooming gardens,
+          sun-kissed citrus groves and ocean breezes. Find your
+          signature scent today.
+        </p>
+        <div class="hero-actions">
+          <a href="shop.html" class="btn-primary">Explore Collection →</a>
+          <a href="about.html" class="btn-secondary">Our Story</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><span>50+</span><em>Fragrances</em></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><span>100%</span><em>Natural</em></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><span>10K+</span><em>Happy Clients</em></div>
+        </div>
+      </div>
+      <div class="hero-visual animate-in" style="animation-delay:0.2s">
+        <div class="hero-img-ring"></div>
+        <div class="hero-img-ring ring-2"></div>
+        <img
+          src="C:/Users/kumar/.gemini/antigravity/brain/b9d7368d-b998-469e-8e86-567c743e4a9d/hero_banner_1772467784851.png"
+          alt="Your Scent hero perfume"
+          class="hero-img"
+          onerror="this.style.display='none'"
+        />
+        <div class="hero-float-card card-1">
+          <span>🌸</span> Rose Bloom
+        </div>
+        <div class="hero-float-card card-2">
+          <span>🍋</span> Citrus Fresh
+        </div>
+        <div class="hero-float-card card-3">
+          <span>🌊</span> Ocean Mist
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll to explore</span>
+      <div class="scroll-dot"></div>
+    </div>
+  </section>
+
+  <!-- ══ MARQUEE ══ -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span>🌸 Floral</span><span>🍋 Citrus</span><span>🌊 Aquatic</span>
+      <span>🌿 Fresh</span><span>🌹 Rose</span><span>🫧 Airy</span>
+      <span>🌸 Floral</span><span>🍋 Citrus</span><span>🌊 Aquatic</span>
+      <span>🌿 Fresh</span><span>🌹 Rose</span><span>🫧 Airy</span>
+    </div>
+  </div>
+
+  <!-- ══ CATEGORIES ══ -->
+  <section class="section cat-section" id="categories">
+    <div class="section-header center animate-in">
+      <div class="section-tag">Our Collections</div>
+      <h2 class="section-title">Find Your Perfect Scent</h2>
+      <p class="section-sub">Each collection is a journey through nature's most captivating aromas.</p>
+    </div>
+    <div class="cat-grid">
+      <a href="shop.html?filter=floral" class="cat-card cat-floral animate-in">
+        <div class="cat-icon">🌸</div>
+        <h3>Floral</h3>
+        <p>Rose, Jasmine, Lavender & more</p>
+        <div class="cat-arrow">→</div>
+      </a>
+      <a href="shop.html?filter=fresh" class="cat-card cat-fresh animate-in" style="animation-delay:0.1s">
+        <div class="cat-icon">🍋</div>
+        <h3>Fresh Citrus</h3>
+        <p>Lemon, Orange Blossom, Grapefruit</p>
+        <div class="cat-arrow">→</div>
+      </a>
+      <a href="shop.html?filter=aquatic" class="cat-card cat-aquatic animate-in" style="animation-delay:0.2s">
+        <div class="cat-icon">🌊</div>
+        <h3>Aquatic</h3>
+        <p>Ocean Mist, Sea Breeze, Rain Drops</p>
+        <div class="cat-arrow">→</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ══ BESTSELLERS ══ -->
+  <section class="section section-pink" id="bestsellers">
+    <div class="container">
+      <div class="section-header animate-in">
+        <div class="section-tag">Bestsellers</div>
+        <h2 class="section-title">Loved by Thousands</h2>
+        <p class="section-sub">Our most-adored fragrances, each telling a unique story of nature and elegance.</p>
+      </div>
+      <div class="products-grid" id="homeProducts"></div>
+      <div style="text-align:center;margin-top:44px">
+        <a href="shop.html" class="btn-secondary">View All Products →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ BRAND VALUES ══ -->
+  <section class="section values-section">
+    <div class="container">
+      <div class="section-header center animate-in">
+        <div class="section-tag">Why Choose Us</div>
+        <h2 class="section-title">Pure. Natural. Luxurious.</h2>
+        <p class="section-sub">We believe in fragrances that are kind to you and the planet.</p>
+      </div>
+      <div class="values-grid">
+        <div class="value-card animate-in">
+          <div class="value-icon" style="background:linear-gradient(135deg,var(--pink-light),#fff)">🌿</div>
+          <h4>100% Natural</h4>
+          <p>All our perfumes use ethically-sourced natural ingredients with no harsh chemicals.</p>
+        </div>
+        <div class="value-card animate-in" style="animation-delay:0.1s">
+          <div class="value-icon" style="background:linear-gradient(135deg,var(--blue-light),#fff)">🐰</div>
+          <h4>Cruelty-Free</h4>
+          <p>We are proud to be 100% cruelty-free and vegan certified across all our products.</p>
+        </div>
+        <div class="value-card animate-in" style="animation-delay:0.2s">
+          <div class="value-icon" style="background:linear-gradient(135deg,var(--lavender),#fff)">♻️</div>
+          <h4>Eco Packaging</h4>
+          <p>Stylish, sustainable packaging made from recycled materials. Beautiful inside and out.</p>
+        </div>
+        <div class="value-card animate-in" style="animation-delay:0.3s">
+          <div class="value-icon" style="background:linear-gradient(135deg,#fff8e1,#fff)">✨</div>
+          <h4>Long-Lasting</h4>
+          <p>Our formulas are designed to last 8–12 hours so you stay beautifully scented all day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TESTIMONIALS ══ -->
+  <section class="section section-blue testimonials-section">
+    <div class="container">
+      <div class="section-header center animate-in">
+        <div class="section-tag">Reviews</div>
+        <h2 class="section-title">What Our Customers Say</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card animate-in">
+          <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+          <p>"Rose Bloom is my absolute favourite! It stays on all day and I get compliments everywhere I go."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">PS</div>
+            <div><strong>Priya Sharma</strong><em>Delhi</em></div>
+          </div>
+        </div>
+        <div class="testimonial-card animate-in" style="animation-delay:0.1s">
+          <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+          <p>"The Citrus Glow perfume is so refreshing! Perfect for summer mornings. Love the packaging too!"</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,var(--blue-medium),var(--blue-deep))">AM</div>
+            <div><strong>Ananya Mehta</strong><em>Mumbai</em></div>
+          </div>
+        </div>
+        <div class="testimonial-card animate-in" style="animation-delay:0.2s">
+          <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+          <p>"Ocean Mist is divine — a light, fresh scent that reminds me of a sea breeze. Simply beautiful."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,var(--lavender-mid),#9c27b0)">RK</div>
+            <div><strong>Riya Kapoor</strong><em>Bangalore</em></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ NEWSLETTER ══ -->
+  <section class="newsletter-section">
+    <div class="newsletter-inner animate-in">
+      <div class="nl-text">
+        <div class="section-tag" style="color:#fff;background:rgba(255,255,255,0.2)">Stay Connected</div>
+        <h2>Get 10% off your first order 🎁</h2>
+        <p>Subscribe to our newsletter for exclusive offers, new launches and scent guides.</p>
+      </div>
+      <form class="nl-form" id="nlForm" onsubmit="handleNL(event)">
+        <input type="email" placeholder="Enter your email address..." required id="nlEmail"/>
+        <button type="submit">Subscribe ✨</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand-name">Your Scent 🌸</div>
+        <p>Luxury natural fragrances inspired by nature's most beautiful blooms, fruits and oceans.</p>
+        <div class="footer-socials">
+          <a class="social-btn" href="#" title="Instagram">📷</a>
+          <a class="social-btn" href="#" title="Facebook">📘</a>
+          <a class="social-btn" href="#" title="Pinterest">📌</a>
+          <a class="social-btn" href="#" title="YouTube">▶️</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="shop.html?filter=floral">Floral Perfumes</a></li>
+          <li><a href="shop.html?filter=fresh">Fresh & Citrus</a></li>
+          <li><a href="shop.html?filter=aquatic">Aquatic Scents</a></li>
+          <li><a href="shop.html">All Products</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="#">Shipping Info</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p style="font-size:.84rem;color:rgba(255,255,255,.5);margin-bottom:14px">Get the latest offers & launches directly in your inbox.</p>
+        <form class="newsletter-form" onsubmit="handleFooterNL(event)">
+          <input type="email" placeholder="Your email..." required />
+          <button type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+    <hr class="footer-divider" />
+    <div class="footer-bottom">
+      <span>© 2026 Your Scent. All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══ CART SIDEBAR ══ -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>🛒 My Bag</h3>
+      <button class="cart-close" id="cartClose">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total-row">
+        <span class="cart-total-label">Total</span>
+        <span class="cart-total-val" id="cartTotal">₹0</span>
+      </div>
+      <button class="cart-checkout-btn" onclick="handleCheckout()">Proceed to Checkout →</button>
+    </div>
+  </aside>
+
+  <!-- ══ TOAST ══ -->
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+  <script>
+    // Render 4 bestsellers on homepage
+    document.addEventListener('DOMContentLoaded', () => {
+      renderProducts('homeProducts', products.filter(p => p.bestseller), 4);
+    });
+
+    function handleNL(e) {
+      e.preventDefault();
+      showToast('🎁 Subscribed! Your 10% coupon is on its way.');
+      document.getElementById('nlEmail').value = '';
+    }
+    function handleFooterNL(e) {
+      e.preventDefault();
+      showToast('✅ You\'re subscribed! Thank you.');
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
