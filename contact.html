@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Contact Your Scent – reach out to us for orders, fragrance guidance, or any questions." />
+    <title>Contact | Your Scent</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        /* ── Contact Hero ── */
+        .contact-hero {
+            padding: 120px 5% 70px;
+            background: linear-gradient(135deg, #f0f8ff 0%, var(--pink-light) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-hero::before {
+            content: '✉️';
+            font-size: 200px;
+            position: absolute;
+            left: 3%;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.06;
+        }
+
+        .contact-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .contact-hero p {
+            font-size: .95rem;
+            color: var(--text-mid);
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        /* ── Contact Main ── */
+        .contact-main {
+            padding: 80px 5% 100px;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        /* Form */
+        .contact-form-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 44px 40px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border);
+        }
+
+        .contact-form-card h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+        }
+
+        .contact-form-card>p {
+            font-size: .85rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: .82rem;
+            font-weight: 600;
+            color: var(--text-mid);
+            margin-bottom: 7px;
+            letter-spacing: .3px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px 16px;
+            border: 2px solid var(--border);
+            border-radius: var(--radius-sm);
+            background: var(--cream);
+            color: var(--text-dark);
+            font-size: .88rem;
+            font-family: 'Poppins', sans-serif;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--pink-medium);
+            box-shadow: 0 0 0 3px rgba(244, 143, 177, .15);
+            background: #fff;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+            line-height: 1.6;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--text-light);
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 15px;
+            font-size: .95rem;
+            font-weight: 600;
+        }
+
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .form-success .success-icon {
+            font-size: 3.5rem;
+            margin-bottom: 14px;
+        }
+
+        .form-success h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .form-success p {
+            font-size: .9rem;
+            color: var(--text-light);
+        }
+
+        /* Info Cards */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        .info-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: 26px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+            transition: var(--transition);
+        }
+
+        .info-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: var(--radius-sm);
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+        }
+
+        .info-card h4 {
+            font-size: .9rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+        }
+
+        .info-card p {
+            font-size: .83rem;
+            color: var(--text-mid);
+            line-height: 1.5;
+        }
+
+        .info-card a {
+            color: var(--pink-accent);
+            font-size: .83rem;
+        }
+
+        /* Map placeholder */
+        .map-card {
+            background: linear-gradient(135deg, var(--pink-light), var(--blue-light));
+            border-radius: var(--radius-md);
+            padding: 36px;
+            text-align: center;
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .map-card::before {
+            content: '🗺️';
+            font-size: 80px;
+            opacity: .15;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .map-emoji {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+        }
+
+        .map-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+        }
+
+        .map-card p {
+            font-size: .82rem;
+            color: var(--text-mid);
+        }
+
+        .map-hours {
+            margin-top: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .hour-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: .8rem;
+            color: var(--text-mid);
+        }
+
+        .hour-row strong {
+            color: var(--text-dark);
+        }
+
+        /* FAQs */
+        .faq-section {
+            padding: 80px 5%;
+            background: linear-gradient(180deg, var(--pink-light), var(--cream));
+        }
+
+        .faq-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 20px 24px;
+            text-align: left;
+            font-size: .92rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            color: var(--pink-accent);
+            background: var(--pink-light);
+        }
+
+        .faq-question.open {
+            color: var(--pink-accent);
+        }
+
+        .faq-arrow {
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+
+        .faq-question.open .faq-arrow {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .4s ease, padding .3s ease;
+            font-size: .86rem;
+            color: var(--text-mid);
+            line-height: 1.7;
+            padding: 0 24px;
+        }
+
+        .faq-answer.open {
+            max-height: 200px;
+            padding: 0 24px 20px;
+        }
+
+        /* Responsive */
+        @media(max-width:900px) {
+            .contact-main {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(max-width:600px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form-card {
+                padding: 28px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <a href="index.html" class="nav-logo">
+            <div class="logo-icon">🌸</div>
+            <span class="brand-name">Your Scent</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="nav-btn-icon" id="searchBtn">🔍</button>
+            <button class="nav-btn-icon cart-btn" id="cartBtn">
+                🛒<span class="cart-count" id="cartCount">0</span>
+            </button>
+            <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- CONTACT HERO -->
+    <div class="contact-hero page-top animate-in">
+        <div class="section-tag">Get in Touch</div>
+        <h1>We'd Love to Hear from You 💌</h1>
+        <p>Have a question about our fragrances, an order, or just want to say hello? We're here for you!</p>
+    </div>
+
+    <!-- CONTACT MAIN -->
+    <div style="padding:80px 5% 100px">
+        <div class="contact-main" style="padding:0">
+            <!-- FORM -->
+            <div class="contact-form-card animate-in">
+                <h2>Send Us a Message</h2>
+                <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+                <form id="contactForm" onsubmit="handleContact(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fname">First Name *</label>
+                            <input type="text" id="fname" placeholder="Your first name" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="lname">Last Name *</label>
+                            <input type="text" id="lname" placeholder="Your last name" required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" placeholder="yourname@email.com" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" placeholder="+91 98765 43210" />
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <select id="subject" required>
+                            <option value="">Select a topic...</option>
+                            <option>Order Inquiry</option>
+                            <option>Product Information</option>
+                            <option>Fragrance Advice</option>
+                            <option>Returns & Exchanges</option>
+                            <option>Wholesale / B2B</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" placeholder="Tell us how we can help you..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary form-submit">Send Message ✨</button>
+                </form>
+                <div class="form-success" id="formSuccess">
+                    <div class="success-icon">🌸</div>
+                    <h3>Message Sent!</h3>
+                    <p>Thank you for reaching out. We'll get back to you within 24 hours.</p>
+                    <a href="shop.html" class="btn-primary" style="margin-top:20px;display:inline-flex">Explore Our
+                        Fragrances →</a>
+                </div>
+            </div>
+
+            <!-- INFO -->
+            <div class="contact-info animate-in" style="animation-delay:.15s">
+                <div class="info-card">
+                    <div class="info-icon" style="background:var(--pink-light)">📍</div>
+                    <div>
+                        <h4>Our Studio</h4>
+                        <p>12, Floral Lane, Bani Park,<br />Jaipur, Rajasthan – 302016</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon" style="background:var(--blue-light)">📞</div>
+                    <div>
+                        <h4>Phone & WhatsApp</h4>
+                        <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+                        <p style="margin-top:4px;font-size:.78rem;color:var(--text-light)">Mon–Sat, 10am – 7pm IST</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon" style="background:var(--lavender)">✉️</div>
+                    <div>
+                        <h4>Email Us</h4>
+                        <p><a href="mailto:support@yourscent.in">support@yourscent.in</a></p>
+                        <p><a href="mailto:wholesale@yourscent.in"
+                                style="color:var(--blue-deep)">wholesale@yourscent.in</a></p>
+                    </div>
+                </div>
+                <div class="map-card">
+                    <div class="map-emoji">🕐</div>
+                    <h4>Store Hours</h4>
+                    <p>Visit our flagship studio in Jaipur</p>
+                    <div class="map-hours">
+                        <div class="hour-row"><strong>Mon – Fri</strong><span>10:00 AM – 7:00 PM</span></div>
+                        <div class="hour-row"><strong>Saturday</strong><span>10:00 AM – 5:00 PM</span></div>
+                        <div class="hour-row"><strong>Sunday</strong><span>Closed</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQs -->
+    <section class="faq-section">
+        <div class="section-header center animate-in">
+            <div class="section-tag">FAQs</div>
+            <h2 class="section-title">Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    Do you offer free shipping? <span class="faq-arrow">▼</span>
+                </button>
+                <div class="faq-answer">Yes! We offer free standard shipping on all orders above ₹999 across India.
+                    International shipping is available and rates are calculated at checkout.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    Are your perfumes cruelty-free and vegan? <span class="faq-arrow">▼</span>
+                </button>
+                <div class="faq-answer">Absolutely! All Your Scent perfumes are 100% cruelty-free and vegan certified.
+                    We use no animal-derived ingredients and never test on animals.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    How long do your perfumes last? <span class="faq-arrow">▼</span>
+                </button>
+                <div class="faq-answer">Our Eau de Parfum formulas are designed to last 8–12 hours on skin. Applying to
+                    pulse points (wrists, neck, behind ears) maximises longevity.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    Can I return or exchange a product? <span class="faq-arrow">▼</span>
+                </button>
+                <div class="faq-answer">Yes. If you're not 100% satisfied, we accept returns within 15 days of delivery
+                    for unopened products. Contact our support team to initiate a return.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFAQ(this)">
+                    Do you offer gift wrapping? <span class="faq-arrow">▼</span>
+                </button>
+                <div class="faq-answer">We do! All our perfumes come in a beautiful keepsake box, and we offer premium
+                    gift wrapping with a personalised handwritten note for a small additional charge.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="brand-name">Your Scent 🌸</div>
+                <p>Luxury natural fragrances inspired by nature's most beautiful blooms, fruits and oceans.</p>
+                <div class="footer-socials">
+                    <a class="social-btn" href="#">📷</a><a class="social-btn" href="#">📘</a><a class="social-btn"
+                        href="#">📌</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="shop.html?filter=floral">Floral</a></li>
+                    <li><a href="shop.html?filter=fresh">Fresh Citrus</a></li>
+                    <li><a href="shop.html?filter=aquatic">Aquatic</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <p style="font-size:.84rem;color:rgba(255,255,255,.5);margin-bottom:14px">Stay updated with new
+                    launches.</p>
+                <form class="newsletter-form" onsubmit="handleFooterNL(event)"><input type="email"
+                        placeholder="Your email..." required /><button type="submit">Join</button></form>
+            </div>
+        </div>
+        <hr class="footer-divider" />
+        <div class="footer-bottom">
+            <span>© 2026 Your Scent. All rights reserved.</span>
+            <div class="footer-bottom-links"><a href="#">Privacy</a><a href="#">Terms</a></div>
+        </div>
+    </footer>
+
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>🛒 My Bag</h3><button class="cart-close" id="cartClose">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-total-row"><span class="cart-total-label">Total</span><span class="cart-total-val"
+                    id="cartTotal">₹0</span></div>
+            <button class="cart-checkout-btn" onclick="handleCheckout()">Proceed to Checkout →</button>
+        </div>
+    </aside>
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+    <script>
+        function handleContact(e) {
+            e.preventDefault();
+            document.getElementById('contactForm').style.display = 'none';
+            document.getElementById('formSuccess').style.display = 'block';
+            showToast('🌸 Message sent! We\'ll respond within 24 hours.');
+        }
+        function toggleFAQ(btn) {
+            const answer = btn.nextElementSibling;
+            const isOpen = btn.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-question').forEach(q => { q.classList.remove('open'); q.nextElementSibling.classList.remove('open'); });
+            if (!isOpen) { btn.classList.add('open'); answer.classList.add('open'); }
+        }
+        function handleFooterNL(e) { e.preventDefault(); showToast('✅ Subscribed!'); e.target.reset(); }
+    </script>
+</body>
+
+</html>
