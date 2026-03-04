@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="About Your Scent – our story, values, and the passion behind every natural perfume we create." />
+    <title>About Us | Your Scent</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        /* ── About Hero ── */
+        .about-hero {
+            padding: 130px 5% 80px;
+            background: linear-gradient(135deg, #fff5f8 0%, #f0f8ff 60%, #fce4ec 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-hero::after {
+            content: '🌸';
+            font-size: 260px;
+            position: absolute;
+            right: 5%;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.06;
+            pointer-events: none;
+        }
+
+        .about-hero-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .about-hero .section-tag {
+            margin-bottom: 16px;
+        }
+
+        .about-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            color: var(--text-dark);
+            line-height: 1.12;
+            margin-bottom: 20px;
+        }
+
+        .about-hero p {
+            font-size: 0.95rem;
+            color: var(--text-mid);
+            line-height: 1.8;
+            margin-bottom: 14px;
+        }
+
+        .hero-img-stack {
+            position: relative;
+            width: 100%;
+            height: 420px;
+        }
+
+        .hero-img-stack .img-main {
+            width: 75%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: 4px solid #fff;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero-img-stack .img-accent {
+            width: 55%;
+            height: 240px;
+            object-fit: cover;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            border: 4px solid #fff;
+            animation: float 8s ease-in-out infinite 1s;
+        }
+
+        .img-placeholder {
+            background: linear-gradient(135deg, var(--pink-light), var(--blue-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        /* ── Mission / Numbers ── */
+        .about-numbers {
+            background: linear-gradient(135deg, var(--pink-light), var(--blue-light));
+            padding: 60px 5%;
+        }
+
+        .numbers-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            text-align: center;
+        }
+
+        .number-card {
+            background: #fff;
+            border-radius: var(--radius-md);
+            padding: 28px 16px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .number-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .number-card span {
+            display: block;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--pink-accent), var(--blue-deep));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 6px;
+        }
+
+        .number-card p {
+            font-size: 0.82rem;
+            color: var(--text-light);
+        }
+
+        /* ── Story ── */
+        .story-section {
+            padding: 90px 5%;
+            background: var(--white);
+        }
+
+        .story-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .story-img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border: 4px solid var(--pink-light);
+        }
+
+        .story-img-placeholder {
+            width: 100%;
+            height: 380px;
+            background: linear-gradient(135deg, var(--pink-light), var(--lavender));
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+        }
+
+        .story-text .section-tag {
+            margin-bottom: 16px;
+        }
+
+        .story-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            margin-bottom: 18px;
+        }
+
+        .story-text p {
+            font-size: 0.9rem;
+            color: var(--text-mid);
+            line-height: 1.8;
+            margin-bottom: 14px;
+        }
+
+        /* ── Ingredients ── */
+        .ingredients-section {
+            padding: 90px 5%;
+            background: linear-gradient(180deg, var(--pink-light), var(--cream));
+        }
+
+        .ingr-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .ingr-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: 36px 28px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .ingr-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .ingr-emoji {
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+
+        .ingr-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .ingr-card p {
+            font-size: 0.82rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* ── Team ── */
+        .team-section {
+            padding: 90px 5%;
+            background: var(--white);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .team-card {
+            text-align: center;
+            background: var(--cream);
+            border-radius: var(--radius-md);
+            padding: 36px 22px;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .team-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .team-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 16px;
+            border: 3px solid #fff;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .team-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+        }
+
+        .team-card .role {
+            font-size: 0.78rem;
+            color: var(--pink-accent);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+
+        .team-card p {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        /* ── Responsive ── */
+        @media(max-width:768px) {
+
+            .about-hero-inner,
+            .story-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-img-stack {
+                height: 260px;
+            }
+
+            .numbers-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .ingr-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media(max-width:480px) {
+
+            .ingr-grid,
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <a href="index.html" class="nav-logo">
+            <div class="logo-icon">🌸</div>
+            <span class="brand-name">Your Scent</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="nav-btn-icon" id="searchBtn">🔍</button>
+            <button class="nav-btn-icon cart-btn" id="cartBtn">
+                🛒<span class="cart-count" id="cartCount">0</span>
+            </button>
+            <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- ABOUT HERO -->
+    <section class="about-hero">
+        <div class="about-hero-inner">
+            <div class="animate-in">
+                <div class="section-tag">Our Story</div>
+                <h1>Born from Nature's<br /><span class="text-gradient">Finest Blooms</span></h1>
+                <p>Your Scent was born from a simple dream — to bottle the most beautiful moments in nature and offer
+                    them as wearable art.</p>
+                <p>Founded in 2018 in the fragrant gardens of Jaipur, we craft every perfume with love, care, and only
+                    the purest natural ingredients sourced from around the world.</p>
+                <a href="shop.html" class="btn-primary" style="margin-top:20px">Explore Our Collection →</a>
+            </div>
+            <div class="hero-img-stack animate-in" style="animation-delay:0.2s">
+                <img src="images/about-hero.png" alt="Your Scent perfume garden" class="img-main" />
+                <img src="images/about-story.png" alt="Perfume atelier" class="img-accent" />
+            </div>
+        </div>
+    </section>
+
+    <!-- NUMBERS -->
+    <div class="about-numbers">
+        <div class="numbers-grid">
+            <div class="number-card animate-in"><span>50+</span>
+                <p>Unique Fragrances</p>
+            </div>
+            <div class="number-card animate-in"><span>10K+</span>
+                <p>Happy Customers</p>
+            </div>
+            <div class="number-card animate-in"><span>6+</span>
+                <p>Years of Crafting</p>
+            </div>
+            <div class="number-card animate-in"><span>100%</span>
+                <p>Natural Ingredients</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- STORY -->
+    <section class="story-section">
+        <div class="story-inner">
+            <img src="images/about-story.png" alt="Your Scent perfume workshop" class="story-img animate-in" />
+            <div class="animate-in">
+                <div class="section-tag">Our Philosophy</div>
+                <h2 class="section-title">Fragrance is Emotion,<br />Bottled.</h2>
+                <p>We believe a perfume is not just a scent — it's a memory, an emotion, a part of your identity. That
+                    is why we take extraordinary care in crafting every single bottle.</p>
+                <p>Each of our fragrances goes through months of development, testing with real people, and refining
+                    until we capture the exact emotion we're aiming for — from the freshness of a morning garden to the
+                    cool serenity of an ocean breeze.</p>
+                <p>We partner with ethical farmers in France, India, and Sri Lanka for our botanicals, and we never
+                    compromise on the quality of our raw materials.</p>
+                <a href="shop.html" class="btn-secondary" style="margin-top:10px">Shop Now →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- INGREDIENTS -->
+    <section class="ingredients-section">
+        <div class="section-header center animate-in">
+            <div class="section-tag">Our Ingredients</div>
+            <h2 class="section-title">Only the Purest</h2>
+            <p class="section-sub">We hand-select every ingredient with the utmost care for quality and sustainability.
+            </p>
+        </div>
+        <div class="ingr-grid">
+            <div class="ingr-card animate-in">
+                <div class="ingr-emoji">🌹</div>
+                <h4>Bulgarian Rose</h4>
+                <p>Sourced from the Rose Valley of Bulgaria — the most prized rose oil in the world, rich, warm and
+                    deeply floral.</p>
+            </div>
+            <div class="ingr-card animate-in" style="animation-delay:.1s">
+                <div class="ingr-emoji">🫧</div>
+                <h4>Aqua Crystals</h4>
+                <p>Marine-derived aquatic molecules that capture the pure, clean scent of ocean air and fresh spring
+                    water.</p>
+            </div>
+            <div class="ingr-card animate-in" style="animation-delay:.2s">
+                <div class="ingr-emoji">🍊</div>
+                <h4>Sicilian Citrus</h4>
+                <p>Cold-pressed orange and lemon peel from sun-drenched Sicilian groves for the brightest, most vibrant
+                    top notes.</p>
+            </div>
+            <div class="ingr-card animate-in" style="animation-delay:.3s">
+                <div class="ingr-emoji">💜</div>
+                <h4>Provence Lavender</h4>
+                <p>Authentic French lavender essential oil, harvested at peak bloom for maximum aromatic richness and
+                    longevity.</p>
+            </div>
+            <div class="ingr-card animate-in" style="animation-delay:.4s">
+                <div class="ingr-emoji">🌳</div>
+                <h4>Sandalwood</h4>
+                <p>Ethically harvested Indian sandalwood, providing a creamy, warm base note that beautifully anchors
+                    all our blends.</p>
+            </div>
+            <div class="ingr-card animate-in" style="animation-delay:.5s">
+                <div class="ingr-emoji">🌼</div>
+                <h4>Jasmine Absolute</h4>
+                <p>Steam-distilled jasmine from Tamil Nadu, India — intensely floral, rich and deeply feminine.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEAM -->
+    <section class="team-section">
+        <div class="section-header center animate-in">
+            <div class="section-tag">Meet the Team</div>
+            <h2 class="section-title">The Noses Behind Your Scent</h2>
+        </div>
+        <div class="team-grid">
+            <div class="team-card animate-in">
+                <div class="team-avatar" style="background:linear-gradient(135deg,var(--pink-light),var(--pink-soft))">
+                    👩</div>
+                <h4>Aisha Mehra</h4>
+                <div class="role">Founder & Master Perfumer</div>
+                <p>15 years of experience crafting fragrances. Trained in Grasse, France — the perfume capital of the
+                    world.</p>
+            </div>
+            <div class="team-card animate-in" style="animation-delay:.1s">
+                <div class="team-avatar" style="background:linear-gradient(135deg,var(--blue-light),var(--blue-soft))">
+                    👨</div>
+                <h4>Rohan Singh</h4>
+                <div class="role">Head of Sourcing</div>
+                <p>Passionate about sustainable sourcing, Rohan travels the globe to find the finest natural botanicals.
+                </p>
+            </div>
+            <div class="team-card animate-in" style="animation-delay:.2s">
+                <div class="team-avatar" style="background:linear-gradient(135deg,var(--lavender),var(--lavender-mid))">
+                    👩</div>
+                <h4>Priya Kapoor</h4>
+                <div class="role">Lead Fragrance Designer</div>
+                <p>Creative visionary behind our aquatic and fresh collections, bringing ocean and garden to life in a
+                    bottle.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="brand-name">Your Scent 🌸</div>
+                <p>Luxury natural fragrances inspired by nature's most beautiful blooms, fruits and oceans.</p>
+                <div class="footer-socials">
+                    <a class="social-btn" href="#">📷</a>
+                    <a class="social-btn" href="#">📘</a>
+                    <a class="social-btn" href="#">📌</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="shop.html?filter=floral">Floral</a></li>
+                    <li><a href="shop.html?filter=fresh">Fresh Citrus</a></li>
+                    <li><a href="shop.html?filter=aquatic">Aquatic</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <p style="font-size:.84rem;color:rgba(255,255,255,.5);margin-bottom:14px">Get the latest offers.</p>
+                <form class="newsletter-form" onsubmit="handleFooterNL(event)"><input type="email"
+                        placeholder="Your email..." required /><button type="submit">Join</button></form>
+            </div>
+        </div>
+        <hr class="footer-divider" />
+        <div class="footer-bottom">
+            <span>© 2026 Your Scent. All rights reserved.</span>
+            <div class="footer-bottom-links"><a href="#">Privacy</a><a href="#">Terms</a></div>
+        </div>
+    </footer>
+
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>🛒 My Bag</h3><button class="cart-close" id="cartClose">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-total-row"><span class="cart-total-label">Total</span><span class="cart-total-val"
+                    id="cartTotal">₹0</span></div>
+            <button class="cart-checkout-btn" onclick="handleCheckout()">Proceed to Checkout →</button>
+        </div>
+    </aside>
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+    <script>
+        function handleFooterNL(e) { e.preventDefault(); showToast('✅ Subscribed! Thank you.'); e.target.reset(); }
+    </script>
+</body>
+
+</html>
